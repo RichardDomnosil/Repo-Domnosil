@@ -28,7 +28,7 @@ def hebrejstina():
     return render_template('hebrejstina.html')
 
 @app.route('/alfabeto')
-def alfabeta():
+def alfabeto():
     return render_template('alfabeto.html')
 
 

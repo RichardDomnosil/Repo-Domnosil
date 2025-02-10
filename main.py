@@ -1,6 +1,32 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
-if __name__ == "__main__":
+
+@app.route('/')
+def home():
+    return render_template('base.html')
+
+
+@app.route('/abeceda')
+def abeceda():
+    return render_template('abeceda.html')
+
+
+@app.route('/alfabeta')
+def alfabeta():
+    return render_template('alfabeta.html')
+
+
+@app.route('/azbuka')
+def azbuka():
+    return render_template('azbuka.html')
+
+
+@app.route('/hebrejstina')
+def hebrejstina():
+    return render_template('hebrejstina.html')
+
+
+if __name__ == '__main__':
     app.run(debug=True)

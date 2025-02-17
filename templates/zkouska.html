@@ -9,9 +9,16 @@
 </h2>
 
 <main>
-    <p>Nazev blokue je {{ blog }}</p>
-    <p>Emailova adresa je {{ email }}</p>
+    {% if radio %}
     <p>Vybrany programovaci jazyk je {{ radio }}</p>
+    {% endif %}
+    {% if username =='pokuston' and password == 'heslo' %}
+    <h3>Uspesne prihlaseni uzivatele {{ username}}</h3>
+    {% elif username == 'pokuston' %}
+    <h3>Spatne heslo</h3>
+    {% else %}
+    <h3>Neplatny uzivatel</h3>
+    {% endif %}
 </main>
 
 {% endblock %}

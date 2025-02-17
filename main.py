@@ -35,13 +35,12 @@ def alfabeto():
 @app.route('/odkaz', methods=['GET', 'POST'])
 def odkaz():
     if request.method == 'POST':
-        blog = request.form['blog']
-        email = request.form['email']
+        user = request.form['user']
+        password = request.form['password']
         radio = request.form['radio']
-        print(blog, email, radio)
-        return render_template('zkouska.html', blog=blog, email=email, radio=radio)
+        print(user, password, radio)
+        return render_template('zkouska.html', user=user, password=password, radio=radio)
     return render_template("link.html")
-
 
 if __name__ == '__main__':
     app.run(debug=True)

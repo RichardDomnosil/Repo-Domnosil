@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from flask import request
 
 app = Flask(__name__)
 
@@ -30,6 +31,16 @@ def hebrejstina():
 @app.route('/alfabeto')
 def alfabeto():
     return render_template('alfabeto.html')
+
+@app.route('/odkaz', methods=['GET', 'POST'])
+def odkaz():
+    if request.method == 'POST':
+        blog = request.form['blog']
+        email = request.form['email']
+        radio = request.form['radio']
+        print(blog, email, radio)
+        return render_template('zkouska.html', blog=blog, email=email, radio=radio)
+    return render_template("link.html")
 
 
 if __name__ == '__main__':
